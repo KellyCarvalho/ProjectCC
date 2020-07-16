@@ -1,0 +1,18 @@
+﻿
+@model projetos.Models.Cliente
+@{
+
+    Layout = "_LayoutAdmin";}
+
+
+<h2>Novo Cliente</h2>
+
+
+<form class="form-horizontal" asp-controller="Cliente"asp-action="Salvar" method="POST">
+    <input type="text" asp-for="Nome" class="form-control" placeholder="Ex: Maria Joaquina">
+    <input type="number" asp-for="CPF" class="form-control" placeholder="Ex: 000.000.000-00">
+    <input type="text" asp-for="Bairro" class="form-control" placeholder="Ex: Itaigara">
+    <input type="text" asp-for="Cidade" class="form-control" placeholder="Ex: Salvador">
+    <input type="tel" asp-for="Telefone" class="form-control" placeholder="Ex: 00 0000-0000"/>
+    <button class="btn btn-success">Cadastrar</button>
+</form>
