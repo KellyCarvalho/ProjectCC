@@ -11,6 +11,7 @@ namespace projetos.Data
     {
         public DbSet<Cliente> clientes { get; set; }
         public DbSet<Servico> servicos { get; set; }
+        public DbSet<OS> os { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
