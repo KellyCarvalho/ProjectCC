@@ -33,7 +33,8 @@ namespace projetos.Controllers{
         }
         public IActionResult Servico()
         {
-            return View();
+            var servico = database.servicos.ToList();
+            return View(servico);
         }
 
         public IActionResult NovoServico()

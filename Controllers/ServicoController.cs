@@ -38,5 +38,12 @@ namespace SystemCC.Controllers
 
 
         }
+        public IActionResult Index(Servico servico)
+        {
+
+            return View();
+
+
+        }
     }
 }
