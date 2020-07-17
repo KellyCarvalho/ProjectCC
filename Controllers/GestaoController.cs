@@ -42,6 +42,19 @@ namespace projetos.Controllers{
             return View();
         }
 
+        public IActionResult OS()
+        {
+            var os = database.os.ToList();
+            return View(os);
+        }
+
+        public IActionResult NovaOS()
+        {
+            ViewBag.clientes= database.clientes.ToList();
+            ViewBag.servicos = database.servicos.ToList();
+            return View();
+        }
+
 
 
     }

@@ -10,7 +10,13 @@ using projetos.Models;
 namespace SystemCC.Controllers
 {
     public class OSController : Controller
-    { private readonly ApplicationDbContext database;
+    {
+        private readonly ApplicationDbContext database;
+
+        public OSController(ApplicationDbContext database)
+        {
+            this.database = database;
+        }
         public IActionResult Index()
         {
             return View();
@@ -21,10 +27,12 @@ namespace SystemCC.Controllers
            
             oS.cliente = database.clientes.First(cliente => cliente.ID == oS.cliente.ID);
             oS.servico = database.servicos.First(servico => servico.ID == oS.servico.ID);
+            oS.idcliente = oS.cliente.ID;
+            oS.idcliente = oS.servico.ID;
             oS.Observacoes = oS.Observacoes;
             database.Add(oS);
             database.SaveChanges();
-            return RedirectToAction("Servico", "Gestao");
+            return RedirectToAction("OS", "Gestao");
 
         }
     }
