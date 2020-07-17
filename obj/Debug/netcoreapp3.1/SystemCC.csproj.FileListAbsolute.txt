@@ -324,5 +324,7 @@ C:\Users\18kel\SystemCC\obj\Debug\netcoreapp3.1\SystemCC.dll
 C:\Users\18kel\SystemCC\obj\Debug\netcoreapp3.1\SystemCC.pdb
 C:\Users\18kel\SystemCC\obj\Debug\netcoreapp3.1\SystemCC.genruntimeconfig.cache
 C:\Users\18kel\SystemCC\obj\Debug\netcoreapp3.1\Razor\Views\Gestao\Servico.cshtml.g.cs
-C:\Users\18kel\SystemCC\obj\Debug\netcoreapp3.1\SystemCC.csproj.CoreCompileInputs.cache
 C:\Users\18kel\SystemCC\obj\Debug\netcoreapp3.1\Razor\Views\Gestao\NovoServico.cshtml.g.cs
+C:\Users\18kel\SystemCC\obj\Debug\netcoreapp3.1\Razor\Views\Gestao\OS.cshtml.g.cs
+C:\Users\18kel\SystemCC\obj\Debug\netcoreapp3.1\SystemCC.csproj.CoreCompileInputs.cache
+C:\Users\18kel\SystemCC\obj\Debug\netcoreapp3.1\Razor\Views\Gestao\NovaOS.cshtml.g.cs
