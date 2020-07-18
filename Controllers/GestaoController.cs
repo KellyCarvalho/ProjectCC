@@ -50,8 +50,10 @@ namespace projetos.Controllers{
 
         public IActionResult NovaOS()
         {
-            ViewBag.clientes= database.clientes.ToList();
-            ViewBag.servicos = database.servicos.ToList();
+
+            ViewBag.clientes = database.clientes.ToList();
+            ViewBag.servicos =database.servicos.ToList();
+        
             return View();
         }
 

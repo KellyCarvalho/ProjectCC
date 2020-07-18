@@ -24,15 +24,27 @@ namespace SystemCC.Controllers
 
         public IActionResult Salvar(OS oS)
         {
+            if (oS == null)
+            {
+                oS.cliente = database.clientes.First(cliente => cliente.ID == oS.cliente.ID);
+                oS.servico = database.servicos.First(servico => servico.ID == oS.servico.ID);
+                oS.idcliente = oS.cliente.ID;
+                oS.idServico = oS.servico.ID;
+                oS.Observacoes = oS.Observacoes;
+                database.Add(oS);
+                database.SaveChanges();
+                return RedirectToAction("OS", "Gestao");
+
+            }
+            else
+            {
+
+                ViewBag.clientes = database.clientes.ToList();
+                ViewBag.servicos = database.servicos.ToList();
+                return View("../Gestao/NovaOS");
+            }
+
            
-            oS.cliente = database.clientes.First(cliente => cliente.ID == oS.cliente.ID);
-            oS.servico = database.servicos.First(servico => servico.ID == oS.servico.ID);
-            oS.idcliente = oS.cliente.ID;
-            oS.idcliente = oS.servico.ID;
-            oS.Observacoes = oS.Observacoes;
-            database.Add(oS);
-            database.SaveChanges();
-            return RedirectToAction("OS", "Gestao");
 
         }
     }
