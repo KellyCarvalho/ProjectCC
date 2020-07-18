@@ -16,6 +16,9 @@
     <label asp-for="cliente.ID">Nome</label>
     <select class="form-control" asp-for="idcliente" asp-items='@(new SelectList(@ViewBag.clientes, "ID", "Nome"))'></select>
 
+    <select class="form-control" asp-for="idServico" asp-items='@(new SelectList(@ViewBag.servicos, "ID", "Nome"))'></select>
+
+
 
     <label asp-for="Observacoes">Nome</label>
     <input asp-for="Observacoes" type="text" class="form-control" />
