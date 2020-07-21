@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\18kel\\SystemCC\\SystemCC.csproj": {}
+    "C:\\Users\\Kelly Carvalho\\projetocc\\SystemCC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\18kel\\SystemCC\\SystemCC.csproj": {
+    "C:\\Users\\Kelly Carvalho\\projetocc\\SystemCC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\18kel\\SystemCC\\SystemCC.csproj",
+        "projectUniqueName": "C:\\Users\\Kelly Carvalho\\projetocc\\SystemCC.csproj",
         "projectName": "SystemCC",
-        "projectPath": "C:\\Users\\18kel\\SystemCC\\SystemCC.csproj",
-        "packagesPath": "C:\\Users\\18kel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\18kel\\SystemCC\\obj\\",
+        "projectPath": "C:\\Users\\Kelly Carvalho\\projetocc\\SystemCC.csproj",
+        "packagesPath": "C:\\Users\\Kelly Carvalho\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kelly Carvalho\\projetocc\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\18kel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Kelly Carvalho\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -89,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
