@@ -21,15 +21,13 @@ namespace SystemCC.Controllers
         {
             return View();
         }
-
+        [HttpPost]
         public IActionResult Salvar(OS oS)
         {
             if (oS == null)
             {
-                oS.cliente = database.clientes.First(cliente => cliente.ID == oS.cliente.ID);
-                oS.servico = database.servicos.First(servico => servico.ID == oS.servico.ID);
-                oS.idcliente = oS.cliente.ID;
-                oS.idServico = oS.servico.ID;
+            oS.idcliente=oS.idcliente;
+                oS.idServico=oS.idServico;
                 oS.Observacoes = oS.Observacoes;
                 database.Add(oS);
                 database.SaveChanges();
@@ -47,5 +45,23 @@ namespace SystemCC.Controllers
            
 
         }
+/*
+        [HttpPost]
+        public IActionResult Atualizar(OS oS){
+
+             var os = database.os.First(os => os.ID == oS.ID);
+                oS.cliente = database.clientes.First(cliente => cliente.ID == oS.cliente.ID);
+                oS.servico = database.servicos.First(servico => servico.ID == oS.servico.ID);
+                oS.idcliente = oS.cliente.ID;
+                oS.idServico = oS.servico.ID;
+                oS.Observacoes = oS.Observacoes;
+                database.Add(oS);
+
+            
+                database.SaveChanges();
+                return RedirectToAction("OS", "Gestao");
+        
+        
+        }*/
     }
 }

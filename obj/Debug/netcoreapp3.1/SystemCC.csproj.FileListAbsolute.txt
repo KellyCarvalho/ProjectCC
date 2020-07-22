@@ -495,3 +495,4 @@ C:\Users\Kelly Carvalho\projetocc\obj\Debug\netcoreapp3.1\staticwebassets\System
 C:\Users\Kelly Carvalho\projetocc\obj\Debug\netcoreapp3.1\SystemCC.dll
 C:\Users\Kelly Carvalho\projetocc\obj\Debug\netcoreapp3.1\SystemCC.pdb
 C:\Users\Kelly Carvalho\projetocc\obj\Debug\netcoreapp3.1\SystemCC.genruntimeconfig.cache
+C:\Users\Kelly Carvalho\projetocc\obj\Debug\netcoreapp3.1\Razor\Views\Gestao\EditarOS.cshtml.g.cs
