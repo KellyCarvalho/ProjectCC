@@ -24,23 +24,40 @@ namespace SystemCC.Controllers
         [HttpPost]
         public IActionResult Salvar(OS oS)
         {
-            if (oS == null)
-            {
-            oS.idcliente=oS.idcliente;
-                oS.idServico=oS.idServico;
+            string clienteid = database.clientes.First(c =>c.ID==oS.idcliente).ToString();
+            string servicoid= database.servicos.First(s=>s.ID==oS.idServico).ToString();
+
+            int sid;
+           
+            int.TryParse(clienteid, out sid);
+        /*    oS.cliente.ID=clienteid;*/
+         
+            /*Conversões*/
+          
+          /*
+                oS.idcliente= Convert.ToInt32(database.clientes.First(c =>c.ID==oS.idcliente));
+                oS.idServico= Convert.ToInt32(database.servicos.First(s=>s.ID==oS.idServico));*/
+
+        /*  oS.servico.ID=Convert.ToInt32(database.servicos.First(ser=>ser.ID==oS.servico.ID));*/
+             /*   oS.servico.Nome=database.servicos.First(ser=>ser.Nome==oS.servico.Nome);     
+
+                oS.servico.Preco=Convert.ToSingle(database.servicos.First(ser=>ser.Preco==oS.servico.Preco));
+
+
+                oS.cliente.ID=Convert.ToInt32(database.clientes.First(cli=>cli.ID==oS.cliente.ID));
+                 oS.cliente.CPF= Convert.ToInt32(database.clientes.First(cli=>cli.CPF==oS.cliente.CPF));
+                oS.cliente.Nome=database.clientes.First(cli=>cli.Nome==oS.cliente.Nome).ToString();
+                oS.cliente.Telefone=database.clientes.First(cli=> cli.Telefone==oS.cliente.Telefone).ToString();
+                oS.cliente.Bairro=database.clientes.First(cli=>cli.Bairro==oS.cliente.Bairro).ToString();
+                oS.cliente.Cidade=database.clientes.First(cli=>cli.Cidade==oS.cliente.Cidade).ToString();*/
+               
                 oS.Observacoes = oS.Observacoes;
                 database.Add(oS);
                 database.SaveChanges();
                 return RedirectToAction("OS", "Gestao");
 
-            }
-            else
-            {
 
-                ViewBag.clientes = database.clientes.ToList();
-                ViewBag.servicos = database.servicos.ToList();
-                return View("../Gestao/NovaOS");
-            }
+
 
            
 

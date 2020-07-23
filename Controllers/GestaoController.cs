@@ -1,6 +1,9 @@
 ﻿using System;
-using projetos.Models;
+
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using projetos.Models;
+
 using projetos.Data;
 using System.Linq;
 
@@ -43,8 +46,9 @@ namespace projetos.Controllers{
         }
 
         public IActionResult OS()
-        {
-            var os = database.os.ToList();
+        {    
+         
+            var os = database.os.Include(cli=>cli.cliente).Include(Ser=>Ser.servico).ToList();
             return View(os);
         }
 

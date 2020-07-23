@@ -9,7 +9,9 @@
 <a asp-action="NovaOS" asp-controller="Gestao" class="btn btn-success">Cadastrar Ordem de serviço</a>
 <hr />
 
+   <------->
 
+   </------->
 
 
 <table id="oSs" class="table table-striped table-bordered">
@@ -25,22 +27,26 @@
     <tbody>
         @foreach (var oSs in Model)
         {
-            <tr>
-                <td>@oSs.ID</td>
-                <td>@oSs.cliente.Nome</td>
-                <td>@oSs.servico.Nome</td>
+        <tr>
+            <td>@oSs.ID</td>
+            <td>@oSs.servico.ID</td>
 
 
 
 
-                <td>
-                    <a class="btn btn-primary" href="/Gestao/EditarCliente/@oSs.ID">Editar</a>
-                    <form style="display: inline;" asp-controller="Cliente" asp-action="Deletar">
-                        <input type="hidden" name="id" id="id" value="@oSs.ID">
-                        <button class="btn btn-danger">Deletar</button>
-                    </form>
-                </td>
-            </tr>
+
+
+
+
+
+            <td>
+                <a class="btn btn-primary" href="/Gestao/EditarCliente/@oSs.ID">Editar</a>
+                <form style="display: inline;" asp-controller="Cliente" asp-action="Deletar">
+                    <input type="hidden" name="id" id="id" value="@oSs.ID">
+                    <button class="btn btn-danger">Deletar</button>
+                </form>
+            </td>
+        </tr>
         }
     </tbody>
 </table>
