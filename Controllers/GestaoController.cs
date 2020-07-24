@@ -48,7 +48,7 @@ namespace projetos.Controllers{
         public IActionResult OS()
         {    
          
-            var os = database.os.Include(cli=>cli.cliente).Include(Ser=>Ser.servico).ToList();
+            var os = database.os.Include(cli=>cli.Cliente).Include(Ser=>Ser.Servico).ToList();
             return View(os);
         }
 

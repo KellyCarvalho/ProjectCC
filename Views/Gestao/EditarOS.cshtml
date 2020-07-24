@@ -13,7 +13,7 @@
 
     <input type="hidden" asp-for="ID" value="0">
 
-    <label asp-for="cliente.ID">Cliente</label>
+    <label asp-for="Cliente.ID">Cliente</label>
     <select class="form-control" asp-for="idcliente" asp-items='@(new SelectList(@ViewBag.clientes, "ID", "Nome"))'></select>
     <br />
     <label>Serviço</label>

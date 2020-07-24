@@ -29,7 +29,11 @@
         {
         <tr>
             <td>@oSs.ID</td>
-            <td>@oSs.servico.ID</td>
+            <td>@oSs.Cliente.Nome</td>
+            <td>@oSs.Servico.Nome</td>
+
+
+
 
 
 
@@ -41,6 +45,7 @@
 
             <td>
                 <a class="btn btn-primary" href="/Gestao/EditarCliente/@oSs.ID">Editar</a>
+
                 <form style="display: inline;" asp-controller="Cliente" asp-action="Deletar">
                     <input type="hidden" name="id" id="id" value="@oSs.ID">
                     <button class="btn btn-danger">Deletar</button>

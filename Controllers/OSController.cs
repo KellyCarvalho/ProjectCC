@@ -23,14 +23,31 @@ namespace SystemCC.Controllers
         }
         [HttpPost]
         public IActionResult Salvar(OS oS)
-        {
-            string clienteid = database.clientes.First(c =>c.ID==oS.idcliente).ToString();
-            string servicoid= database.servicos.First(s=>s.ID==oS.idServico).ToString();
+        {    int cid;
+       
+            
+       
 
-            int sid;
+            
+            oS.Cliente=database.clientes.First(clientes=>clientes.ID==oS.idcliente);
+            oS.Servico=database.servicos.First(servicos=>servicos.ID==oS.idServico);
+
+              
+
+
+
+      
+     
            
-            int.TryParse(clienteid, out sid);
-        /*    oS.cliente.ID=clienteid;*/
+          
+
+        
+       /*    
+            int.TryParse(clienteid, out cid);
+              int.TryParse(servicoid, out sid);
+          oS.Servico.ID=sid;
+            oS.Cliente.ID=cid;*/
+ 
          
             /*Conversões*/
           
