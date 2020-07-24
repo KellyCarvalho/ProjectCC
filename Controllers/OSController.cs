@@ -32,42 +32,6 @@ namespace SystemCC.Controllers
             oS.Cliente=database.clientes.First(clientes=>clientes.ID==oS.idcliente);
             oS.Servico=database.servicos.First(servicos=>servicos.ID==oS.idServico);
 
-              
-
-
-
-      
-     
-           
-          
-
-        
-       /*    
-            int.TryParse(clienteid, out cid);
-              int.TryParse(servicoid, out sid);
-          oS.Servico.ID=sid;
-            oS.Cliente.ID=cid;*/
- 
-         
-            /*Conversões*/
-          
-          /*
-                oS.idcliente= Convert.ToInt32(database.clientes.First(c =>c.ID==oS.idcliente));
-                oS.idServico= Convert.ToInt32(database.servicos.First(s=>s.ID==oS.idServico));*/
-
-        /*  oS.servico.ID=Convert.ToInt32(database.servicos.First(ser=>ser.ID==oS.servico.ID));*/
-             /*   oS.servico.Nome=database.servicos.First(ser=>ser.Nome==oS.servico.Nome);     
-
-                oS.servico.Preco=Convert.ToSingle(database.servicos.First(ser=>ser.Preco==oS.servico.Preco));
-
-
-                oS.cliente.ID=Convert.ToInt32(database.clientes.First(cli=>cli.ID==oS.cliente.ID));
-                 oS.cliente.CPF= Convert.ToInt32(database.clientes.First(cli=>cli.CPF==oS.cliente.CPF));
-                oS.cliente.Nome=database.clientes.First(cli=>cli.Nome==oS.cliente.Nome).ToString();
-                oS.cliente.Telefone=database.clientes.First(cli=> cli.Telefone==oS.cliente.Telefone).ToString();
-                oS.cliente.Bairro=database.clientes.First(cli=>cli.Bairro==oS.cliente.Bairro).ToString();
-                oS.cliente.Cidade=database.clientes.First(cli=>cli.Cidade==oS.cliente.Cidade).ToString();*/
-               
                 oS.Observacoes = oS.Observacoes;
                 database.Add(oS);
                 database.SaveChanges();
