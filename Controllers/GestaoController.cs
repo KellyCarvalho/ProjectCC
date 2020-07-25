@@ -49,6 +49,7 @@ namespace projetos.Controllers{
         {    
          
             var os = database.os.Include(cli=>cli.Cliente).Include(Ser=>Ser.Servico).ToList();
+            
             return View(os);
         }
 
@@ -60,21 +61,25 @@ namespace projetos.Controllers{
         
             return View();
         }
-      /*  public IActionResult EditarOs(int id){
-        
-            ViewBag.clientes = database.clientes.ToList();
+
+      public IActionResult EditarOs(int id){
+             ViewBag.clientes = database.clientes.ToList();
             ViewBag.servicos =database.servicos.ToList();
-            var oss =database.os.First(os=>os.ID==id);
-            OS os = new OS();
-            os.idcliente=oss.idcliente;
-            os.idServico=oss.idServico;
-            os.servico=oss.servico;
-            os.cliente=oss.cliente;
-            os.Observacoes=oss.Observacoes;
-            return View(os);
+
+
+          var oS=database.os.First(oSs=>oSs.ID==id);           
+            OS oss = new OS();
+
+            oss.Cliente=oS.Cliente;
+            oss.Servico=oS.Servico;
+            oss.Observacoes=oS.Observacoes;
+           
+            return View(oS);
                 
 
-        }*/
+        }
+
+       
 
 
     }

@@ -23,7 +23,7 @@ namespace SystemCC.Controllers
         }
         [HttpPost]
         public IActionResult Salvar(OS oS)
-        {    int cid;
+        {  
        
             
        
@@ -43,23 +43,46 @@ namespace SystemCC.Controllers
            
 
         }
-/*
+
         [HttpPost]
         public IActionResult Atualizar(OS oS){
+            
+    
 
-             var os = database.os.First(os => os.ID == oS.ID);
-                oS.cliente = database.clientes.First(cliente => cliente.ID == oS.cliente.ID);
-                oS.servico = database.servicos.First(servico => servico.ID == oS.servico.ID);
-                oS.idcliente = oS.cliente.ID;
-                oS.idServico = oS.servico.ID;
-                oS.Observacoes = oS.Observacoes;
-                database.Add(oS);
+            var os =database.os.First(oSs=>oSs.ID==oS.ID);
+
+            os.Cliente=database.clientes.First(cli=> cli.ID==oS.idcliente);
+            os.Servico=database.servicos.First(ser=>ser.ID==oS.idServico);
+            os.idcliente=oS.idcliente;
+            os.idServico=oS.idServico;
+            os.Observacoes=oS.Observacoes;
+   
 
             
                 database.SaveChanges();
                 return RedirectToAction("OS", "Gestao");
         
         
-        }*/
+        }
+
+           public IActionResult Deletar(int id){
+            if(id > 0){
+    
+            
+
+
+ 
+
+var removeros =database.os.SingleOrDefault(os=>os.ID==id);
+                database.os.Remove(removeros);
+                database.SaveChanges();
+
+             
+                
+              
+       
+            }
+            return RedirectToAction("OS","Gestao");
+        }
     }
 }

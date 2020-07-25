@@ -51,6 +51,12 @@
                         <input type="hidden" name="id" id="id" value="@cliente.ID">
                         <button class="btn btn-danger">Deletar</button>
                     </form>
+
+                    <form style="display: inline;" asp-controller="Gestao" asp-action="NovaOS">
+                        <input type="hidden"id="idcliente" value="@cliente.ID">
+                       
+                        <button class="btn btn-danger">Gerar Ordem De Serviço</button>
+                    </form>
                 </td>
             </tr>
         }

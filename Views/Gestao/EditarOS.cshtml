@@ -3,7 +3,7 @@
 
 @{ Layout = "_LayoutAdmin";}
 
-<h2>Novo Servico</h2>
+<h2>Nova OS</h2>
 
 
 
@@ -11,7 +11,7 @@
 
 
 
-    <input type="hidden" asp-for="ID" value="0">
+    <input type="hidden" asp-for="ID">
 
     <label asp-for="Cliente.ID">Cliente</label>
     <select class="form-control" asp-for="idcliente" asp-items='@(new SelectList(@ViewBag.clientes, "ID", "Nome"))'></select>
@@ -26,5 +26,5 @@
     <label asp-for="Observacoes">Observações</label>
     <input asp-for="Observacoes" type="text" class="form-control" />
     <br />
-    <button class="btn btn-success">Cadastrar</button>
+    <button class="btn btn-success">Atualizar</button>
 </form>
