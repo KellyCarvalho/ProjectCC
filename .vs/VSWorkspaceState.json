@@ -9,6 +9,6 @@
     "\\wwwroot",
     "\\wwwroot\\js"
   ],
-  "SelectedNode": "\\Controllers\\GestaoController.cs",
+  "SelectedNode": "\\Views\\Gestao\\NovoServico.cshtml",
   "PreviewInSolutionExplorer": false
 }

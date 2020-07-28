@@ -41,5 +41,12 @@ namespace SystemCC.Controllers
 
 
         }
+
+        [HttpPost]
+        public IActionResult Clientes(int id){
+        
+
+        return Json("Olá Mundo - Sucesso!!!");
+        }
     }
 }

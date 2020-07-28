@@ -5,8 +5,6 @@
 
 <h2>Nova OS</h2>
 
-
-
 <form class="form-horizontal" asp-controller="OS" asp-action="Salvar" method="POST">
 
 
@@ -20,6 +18,8 @@
 
     <select class="form-control" asp-for="idServico" asp-items='@(new SelectList(@ViewBag.servicos, "ID", "Nome"))'></select>
     <br />
+
+
 
 
 
