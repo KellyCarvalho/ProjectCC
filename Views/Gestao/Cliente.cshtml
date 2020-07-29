@@ -6,6 +6,12 @@
     Layout = "_LayoutAdmin";}
 
 
+
+
+    <h2>Clientes</h2>
+    <hr />
+    <a asp-action="NovoCliente" asp-controller="Gestao" class="btn btn-success">Novo Cliente</a>
+    <hr />
     <script>
 
         $(document).ready(function () {
@@ -13,24 +19,14 @@
         });
     </script>
 
-    <h2>Clientes</h2>
-    <hr />
-    <a asp-action="NovoCliente" asp-controller="Gestao" class="btn btn-success">Novo Cliente</a>
-    <hr />
 
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="~/js/gerarOSCliente.js"></script>
-    
-    <!-- Bootstrap core JavaScript-->
-    <script src="~/vendor/jquery/jquery.min.js"></script>
-    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
+
+
 
     <table id="clientes" class="table table-striped table-bordered">
+
         <thead>
             <tr>
                 <th>Id</th>
@@ -48,6 +44,7 @@
         {
             <tr>
                 <td>@cliente.ID</td>
+               
                 <td>@cliente.CPF</td>
                 <td>@cliente.Nome</td>
                 <td>@cliente.Telefone</td>
@@ -57,17 +54,44 @@
 
                 <td>
                     <a class="btn btn-primary" href="/Gestao/EditarCliente/@cliente.ID">Editar</a>
+
+                    <script type="text/javascript">
+
+                        var enderecoCliente = "https://localhost:5001/Gestao/Cliente/Cliente/"
+
+                        $("#pegarIDCliente").click(function () {
+                            var a = document.getElementById("pegarIDCliente").value;
+                            console.log(a);
+                            a = 0;
+                        });
+                    </script>
+
                     <form style="display: inline;" asp-controller="Cliente" asp-action="Deletar">
-                        <input type="hidden" name="id" id="id" value="@cliente.ID">
+
                         <button class="btn btn-danger">Deletar</button>
                     </form>
+                    <a id="pegarIDCliente" value="@cliente.ID" class="btn btn-success">GOS</a>
 
 
-                    <button id="pegarIDCliente" class="btn btn-success" type="button">GOS</button>
+
+
+
+
 
                 </td>
             </tr>
         }
         </tbody>
     </table>
+
+
+
+
+
+
+
+
+
+
+
 

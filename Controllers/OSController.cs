@@ -47,7 +47,8 @@ namespace SystemCC.Controllers
         [HttpPost]
         public IActionResult Atualizar(OS oS){
             
-    
+   
+
 
             var os =database.os.First(oSs=>oSs.ID==oS.ID);
 
@@ -65,24 +66,18 @@ namespace SystemCC.Controllers
         
         }
 
-           public IActionResult Deletar(int id){
+           public IActionResult Deletar(int id){ 
             if(id > 0){
-    
-            
-
-
  
-
 var removeros =database.os.SingleOrDefault(os=>os.ID==id);
                 database.os.Remove(removeros);
                 database.SaveChanges();
 
-             
-                
-              
-       
             }
             return RedirectToAction("OS","Gestao");
         }
+
+
+      
     }
 }
