@@ -1,0 +1,30 @@
+﻿@model projetos.Models.OS
+
+
+@{ Layout = "_LayoutAdmin";}
+
+<h2>Nova OS</h2>
+
+<form class="form-horizontal" asp-controller="OS" asp-action="GetId" method="POST">
+
+
+
+    <input type="hidden" asp-for="ID" value="0">
+
+    <label asp-for="Cliente.ID">Cliente</label>
+    <select class="form-control" asp-for="idcliente" asp-items='@(new SelectList(@ViewBag.clientes, "ID", "Nome"))'></select>
+    <br />
+    <label>Serviço</label>
+
+    <select class="form-control" asp-for="idServico" asp-items='@(new SelectList(@ViewBag.servicos, "ID", "Nome"))'></select>
+    <br />
+
+
+
+
+
+    <label asp-for="Observacoes">Observações</label>
+    <input asp-for="Observacoes" type="text" class="form-control" />
+    <br />
+    <button class="btn btn-success">Cadastrar</button>
+</form>

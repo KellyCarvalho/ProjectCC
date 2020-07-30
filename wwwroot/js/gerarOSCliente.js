@@ -1,5 +1,5 @@
 
-var enderecoCliente ="https://localhost:5001/Gestao/Cliente/Cliente/"
+var enderecoCliente ="https://localhost:5001/Gestao/"
 
 
 

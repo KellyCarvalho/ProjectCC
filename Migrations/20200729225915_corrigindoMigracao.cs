@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SystemCC.Migrations
 {
-    public partial class CreateSchema : Migration
+    public partial class corrigindoMigracao : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -63,6 +63,20 @@ namespace SystemCC.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_clientes", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "servicos",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Nome = table.Column<string>(nullable: true),
+                    Preco = table.Column<float>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_servicos", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -171,6 +185,35 @@ namespace SystemCC.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "os",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    ClienteID = table.Column<int>(nullable: true),
+                    ServicoID = table.Column<int>(nullable: true),
+                    idServico = table.Column<int>(nullable: false),
+                    idcliente = table.Column<int>(nullable: false),
+                    Observacoes = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_os", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_os_clientes_ClienteID",
+                        column: x => x.ClienteID,
+                        principalTable: "clientes",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_os_servicos_ServicoID",
+                        column: x => x.ServicoID,
+                        principalTable: "servicos",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -207,6 +250,16 @@ namespace SystemCC.Migrations
                 table: "AspNetUsers",
                 column: "NormalizedUserName",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_os_ClienteID",
+                table: "os",
+                column: "ClienteID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_os_ServicoID",
+                table: "os",
+                column: "ServicoID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -227,13 +280,19 @@ namespace SystemCC.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "clientes");
+                name: "os");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "clientes");
+
+            migrationBuilder.DropTable(
+                name: "servicos");
         }
     }
 }

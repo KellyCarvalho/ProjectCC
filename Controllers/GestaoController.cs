@@ -62,7 +62,10 @@ namespace projetos.Controllers{
             return View();
         }
 
-      public IActionResult EditarOs(int id){
+
+       
+
+        public IActionResult EditarOs(int id){
              ViewBag.clientes = database.clientes.ToList();
             ViewBag.servicos =database.servicos.ToList();
 
@@ -79,7 +82,22 @@ namespace projetos.Controllers{
 
         }
 
-     
+        public IActionResult GerarOS()
+        {
+
+            ViewBag.servicos = database.servicos.ToList();
+
+
+
+            return View();
+
+
+        }
+
+
+
+
+
 
     }
 }

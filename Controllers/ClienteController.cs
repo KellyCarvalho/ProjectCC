@@ -46,7 +46,25 @@ namespace SystemCC.Controllers
         public IActionResult Clientes(int id){
         
 
-        return Json("Olá Mundo - Sucesso!!!");
+        return Json(id);
         }
+
+        public IActionResult Deletar(int id)
+        {/*
+          if(id > 0){
+
+   var removeros =database.os.SingleOrDefault(os=>os.ID==id);
+                   database.os.Remove(removeros);
+                   database.SaveChanges();
+               
+            }
+              
+            return RedirectToAction("OS", "Gestao");*/
+
+
+            return Content("coisas: " + id);
+        }
+
+
     }
 }

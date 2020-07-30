@@ -248,10 +248,13 @@ namespace SystemCC.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<int?>("ClienteID")
+                        .HasColumnType("int");
+
                     b.Property<string>("Observacoes")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<int?>("clienteID")
+                    b.Property<int?>("ServicoID")
                         .HasColumnType("int");
 
                     b.Property<int>("idServico")
@@ -260,14 +263,11 @@ namespace SystemCC.Migrations
                     b.Property<int>("idcliente")
                         .HasColumnType("int");
 
-                    b.Property<int?>("servicoID")
-                        .HasColumnType("int");
-
                     b.HasKey("ID");
 
-                    b.HasIndex("clienteID");
+                    b.HasIndex("ClienteID");
 
-                    b.HasIndex("servicoID");
+                    b.HasIndex("ServicoID");
 
                     b.ToTable("os");
                 });
@@ -342,13 +342,13 @@ namespace SystemCC.Migrations
 
             modelBuilder.Entity("projetos.Models.OS", b =>
                 {
-                    b.HasOne("projetos.Models.Cliente", "cliente")
+                    b.HasOne("projetos.Models.Cliente", "Cliente")
                         .WithMany()
-                        .HasForeignKey("clienteID");
+                        .HasForeignKey("ClienteID");
 
-                    b.HasOne("projetos.Models.Servico", "servico")
+                    b.HasOne("projetos.Models.Servico", "Servico")
                         .WithMany()
-                        .HasForeignKey("servicoID");
+                        .HasForeignKey("ServicoID");
                 });
 #pragma warning restore 612, 618
         }

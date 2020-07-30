@@ -2,13 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\Controllers",
-    "\\Models",
     "\\Views",
     "\\Views\\Gestao",
+    "\\Views\\Home",
     "\\Views\\Shared",
     "\\wwwroot",
-    "\\wwwroot\\js"
+    "\\wwwroot\\js",
+    "\\wwwroot\\vendor",
+    "\\wwwroot\\vendor\\jquery"
   ],
-  "SelectedNode": "\\Views\\Gestao\\NovoServico.cshtml",
+  "SelectedNode": "\\Views\\Gestao",
   "PreviewInSolutionExplorer": false
 }

@@ -66,18 +66,39 @@ namespace SystemCC.Controllers
         
         }
 
-           public IActionResult Deletar(int id){ 
-            if(id > 0){
- 
-var removeros =database.os.SingleOrDefault(os=>os.ID==id);
-                database.os.Remove(removeros);
-                database.SaveChanges();
+        public IActionResult Deletar(int id)
+        {/*
+          if(id > 0){
 
+   var removeros =database.os.SingleOrDefault(os=>os.ID==id);
+                   database.os.Remove(removeros);
+                   database.SaveChanges();
+               
             }
-            return RedirectToAction("OS","Gestao");
+              
+            return RedirectToAction("OS", "Gestao");*/
+
+
+            return Content("coisas: " + id);
+        }
+
+        public IActionResult GetId(int id)
+        {
+            
+            OS os = new OS();
+            ViewBag.clientes = database.clientes.First(cli => cli.ID == id);
+            ViewBag.servicos = database.servicos.ToList();
+            os.Cliente = database.clientes.First(cli => cli.ID == id);
+
+            os.Servico =database.servicos.First(servicos=> servicos.ID==os.idServico);
+            os.Observacoes = os.Observacoes;
+            database.Add(os);
+            database.SaveChanges();
+
+            return RedirectToAction("OS", "Gestao");
         }
 
 
-      
+
     }
 }
