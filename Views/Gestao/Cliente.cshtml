@@ -64,9 +64,12 @@
                         <button class="btn btn-danger">Deletar</button>
                     </form>
 
-                    <form style="display: inline; " asp-controller="OS" asp-action="GetId">
-                        <input type="hidden" name="id" id="id" value="@cliente.ID">
-                        <button href="Gestao/GerarOrdemServico" class="btn btn-danger">Deletar</button>
+                    <form style="display: inline;" asp-controller="Gestao" asp-action="GetId">
+                        <input type="hidden" name="id" value="@cliente.ID">
+
+
+
+                        <a class="btn btn-primary" href="/Gestao/GerarOS/@cliente.ID">GerarOS</a>
                     </form>
 
 

@@ -50,21 +50,43 @@ namespace SystemCC.Controllers
         }
 
         public IActionResult Deletar(int id)
-        {/*
+        {
           if(id > 0){
 
-   var removeros =database.os.SingleOrDefault(os=>os.ID==id);
-                   database.os.Remove(removeros);
+   var removercliente =database.clientes.SingleOrDefault(os=>os.ID==id);
+                   database.clientes.Remove(removercliente);
                    database.SaveChanges();
                
             }
               
-            return RedirectToAction("OS", "Gestao");*/
+            return RedirectToAction("Cliente", "Gestao");
 
 
-            return Content("coisas: " + id);
+       
         }
 
+
+        [HttpPost]
+        public IActionResult Atualizar(Cliente cliente)
+        {
+
+            cliente.ID = cliente.ID;
+            cliente.Nome = cliente.Nome;
+            cliente.CPF = cliente.CPF;
+            cliente.Telefone = cliente.Telefone;
+            cliente.Bairro = cliente.Bairro;
+            cliente.Cidade = cliente.Cidade;
+            cliente.Observacoes = cliente.Observacoes;
+
+
+       
+
+
+            database.SaveChanges();
+            return RedirectToAction("OS", "Gestao");
+
+
+        }
 
     }
 }

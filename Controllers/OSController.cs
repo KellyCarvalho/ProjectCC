@@ -17,7 +17,7 @@ namespace SystemCC.Controllers
         {
             this.database = database;
         }
-        public IActionResult Index()
+        public IActionResult Index( OS os)
         {
             return View();
         }
@@ -65,6 +65,22 @@ namespace SystemCC.Controllers
         
         
         }
+        [HttpPost]
+        public IActionResult GerarOrdemServico(OS oS)
+        {
+            ViewBag.servicos = database.servicos.ToList();
+        /*    ViewBag.clientes = database.clientes.Where(c=>c.ID==oS.idcliente).ToList();*/
+
+
+
+            oS.Cliente = database.clientes.First(clientes => clientes.ID == oS.idcliente);
+            oS.Servico = database.servicos.First(servicos => servicos.ID == oS.idServico);
+
+            oS.Observacoes = oS.Observacoes;
+            database.Add(oS);
+            database.SaveChanges();
+            return RedirectToAction("OS", "Gestao");
+        }
 
         public IActionResult Deletar(int id)
         {/*
@@ -82,23 +98,10 @@ namespace SystemCC.Controllers
             return Content("coisas: " + id);
         }
 
-        public IActionResult GetId(int id)
-        {
+      
             
-            OS os = new OS();
-            ViewBag.clientes = database.clientes.First(cli => cli.ID == id);
-            ViewBag.servicos = database.servicos.ToList();
-            os.Cliente = database.clientes.First(cli => cli.ID == id);
 
-            os.Servico =database.servicos.First(servicos=> servicos.ID==os.idServico);
-            os.Observacoes = os.Observacoes;
-            database.Add(os);
-            database.SaveChanges();
+      
 
-            return RedirectToAction("OS", "Gestao");
         }
-
-
-
     }
-}
