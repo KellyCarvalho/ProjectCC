@@ -9,8 +9,8 @@ using projetos.Data;
 namespace SystemCC.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200729225915_corrigindoMigracao")]
-    partial class corrigindoMigracao
+    [Migration("20200807215854_novaoscli")]
+    partial class novaoscli
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -68,22 +68,20 @@ namespace SystemCC.Controllers
         [HttpPost]
         public IActionResult GerarOrdemServico(OS oS)
         {
-            ViewBag.servicos = database.servicos.ToList();
-        /*    ViewBag.clientes = database.clientes.Where(c=>c.ID==oS.idcliente).ToList();*/
-
 
 
             oS.Cliente = database.clientes.First(clientes => clientes.ID == oS.idcliente);
             oS.Servico = database.servicos.First(servicos => servicos.ID == oS.idServico);
 
             oS.Observacoes = oS.Observacoes;
-            database.Add(oS);
+ 
             database.SaveChanges();
             return RedirectToAction("OS", "Gestao");
+
         }
 
         public IActionResult Deletar(int id)
-        {/*
+        {
           if(id > 0){
 
    var removeros =database.os.SingleOrDefault(os=>os.ID==id);
@@ -92,10 +90,9 @@ namespace SystemCC.Controllers
                
             }
               
-            return RedirectToAction("OS", "Gestao");*/
+            return RedirectToAction("OS", "Gestao");
 
 
-            return Content("coisas: " + id);
         }
 
       

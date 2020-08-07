@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SystemCC.Migrations
 {
-    public partial class corrigindoMigracao : Migration
+    public partial class novaoscli : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

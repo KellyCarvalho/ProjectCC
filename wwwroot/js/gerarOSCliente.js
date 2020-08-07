@@ -8,5 +8,8 @@ $("#pegarIDCliente").click(function () {
   /*  $.post(enderecoCliente, function (dados, status) {
         alert("Dados: " + dados + " Status: " + status);
     });*/
-    alert();
+
+    var idcli = $(".id").val();
+    alert(idcli);
+
 });

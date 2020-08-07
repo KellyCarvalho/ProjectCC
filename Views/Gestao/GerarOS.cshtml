@@ -1,22 +1,21 @@
 ﻿@model projetos.Models.OS
 
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-
 <h2>GerarOS</h2>
 
 <input type="hidden" asp-for="ID" value="0">
 
-<label asp-for="Cliente.ID">Cliente</label>
-<input asp-for="Cliente.Nome" value="\\\"/>
 
-<br />
-<label>Serviço</label>
+<form asp-action="GerarOrdemServico" asp-controller="OS" method="post">
 
-<select class="form-control" asp-for="idServico" asp-items='@(new SelectList(@ViewBag.servicos, "ID", "Nome"))'></select>
+    <br />
+    <label>Serviço</label>
 
-<label asp-for="Observacoes">Observações</label>
-<input asp-for="Observacoes" class="form-control" /> <br />
+    <select class="form-control" asp-for="idServico" asp-items='@(new SelectList(@ViewBag.servicos, "ID", "Nome"))'></select>
+    <br />
+    <label>Cliente</label>
+    <select class="form-control" asp-for="idcliente" asp-items='@(new SelectList(@ViewBag.cliente, "ID", "Nome"))'></select>
+    <label asp-for="Observacoes">Observações</label>
+    <input asp-for="Observacoes" class="form-control" /> <br />
+    <button class="btn btn-success">Salvar</button>
+
+</form>

@@ -78,6 +78,7 @@ namespace projetos.Controllers{
 
         public IActionResult EditarCliente(int id)
         {
+
             var cli = database.clientes.First(c => c.ID == id);
             Cliente cliente = new Cliente();
             cliente.ID = cli.ID;
@@ -90,32 +91,38 @@ namespace projetos.Controllers{
                 return View(cliente);
         }
 
-        public IActionResult GerarOS()
+        public IActionResult GerarOS(int id)
         {
-
+           
             ViewBag.servicos = database.servicos.ToList();
-
-
-
-            return View();
-
-
-        }
-        /*
-        public IActionResult GetId(int id)
-        {
-            ViewBag.clientes = database.clientes.Where(c=>c.ID==id);
-            ViewBag.servicos = database.servicos.ToList();
-
+            var cli = database.clientes.First(c => c.ID == id);
+            ViewBag.cliente = database.clientes.Where(c => c.ID == id).ToList();
             OS os = new OS();
-            os.Cliente = database.clientes.First(cli => cli.ID == id);
-            os.idcliente = os.idcliente;
-            os.idServico = os.idServico;
-            os.Observacoes = os.Observacoes;
+            os.idcliente = id;
+     
 
-            return Content(os);
+            return View(os);
+
+
         }
-        */
+
+        public IActionResult Deletar(int id)
+        {
+            if (id > 0)
+            {
+
+                var removeros = database.os.SingleOrDefault(os => os.ID == id);
+                database.os.Remove(removeros);
+                database.SaveChanges();
+
+            }
+
+            return RedirectToAction("OS", "Gestao");
+
+
+        }
+
+
 
 
 
