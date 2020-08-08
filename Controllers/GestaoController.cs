@@ -73,7 +73,16 @@ namespace projetos.Controllers{
             oss.Cliente=oS.Cliente;
             oss.Servico=oS.Servico;
             oss.Observacoes=oS.Observacoes;           
-            return View(oS);                
+            return View(oss);                
+        }
+
+        public IActionResult EditarServico(int id)
+        {
+            Servico servico = new Servico();
+            var serv = database.servicos.First(ser => ser.ID == id);
+            servico.Nome = serv.Nome;
+            servico.Preco = serv.Preco;
+            return View(servico);
         }
 
         public IActionResult EditarCliente(int id)
@@ -106,20 +115,10 @@ namespace projetos.Controllers{
 
         }
 
-        public IActionResult Deletar(int id)
+      public IActionResult Error()
         {
-            if (id > 0)
-            {
 
-                var removeros = database.os.SingleOrDefault(os => os.ID == id);
-                database.os.Remove(removeros);
-                database.SaveChanges();
-
-            }
-
-            return RedirectToAction("OS", "Gestao");
-
-
+            return View();
         }
 
 

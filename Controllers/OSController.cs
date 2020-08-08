@@ -74,7 +74,8 @@ namespace SystemCC.Controllers
             oS.Servico = database.servicos.First(servicos => servicos.ID == oS.idServico);
 
             oS.Observacoes = oS.Observacoes;
- 
+
+            database.Add(oS);
             database.SaveChanges();
             return RedirectToAction("OS", "Gestao");
 

@@ -1,0 +1,24 @@
+﻿@model projetos.Models.Servico
+
+
+@{ Layout = "_LayoutAdmin";}
+
+<h2>Novo Servico</h2>
+
+
+
+<form class="form-horizontal" asp-controller="Servico" asp-action="Atualizar" method="POST">
+
+
+
+    <input type="hidden" asp-for="ID">
+    <label asp-for="Nome">Nome</label>
+    <br />
+    <input asp-for="Nome" type="text" class="form-control" />
+    <br />
+    <label asp-for="Preco">Preço</label>
+    <br />
+    <input asp-for="Preco" type="text" class="form-control" />
+    <br />
+    <button class="btn btn-success">Cadastrar</button>
+</form>

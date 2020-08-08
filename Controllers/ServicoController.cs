@@ -38,10 +38,52 @@ namespace SystemCC.Controllers
 
 
         }
-        public IActionResult Index(Servico servico)
+
+        [HttpPost]
+        public IActionResult Atualizar(Servico servico)
         {
 
-            return View();
+
+
+
+            var serv = database.servicos.First(ser => ser.ID == servico.ID);
+            serv.Nome = servico.Nome;
+            string preco = "";
+            preco = servico.Preco.ToString();
+
+            serv.Preco = float.Parse(preco);
+        
+        
+
+
+            database.SaveChanges();
+            return RedirectToAction("Servico", "Gestao");
+
+
+        }
+        public IActionResult Deletar(int id)
+        {
+            if (id > 0)
+            {
+                var verificarservico = database.os.Where(os => os.idServico == id);
+
+                if (verificarservico!=null)
+                {
+                    return View("Error","Gestao");
+
+                }
+                else{
+
+                    var removerservico = database.servicos.SingleOrDefault(ser => ser.ID == id);
+                    database.servicos.Remove(removerservico);
+                    database.SaveChanges();
+
+                }
+            
+
+            }
+
+            return RedirectToAction("Servico", "Gestao");
 
 
         }
