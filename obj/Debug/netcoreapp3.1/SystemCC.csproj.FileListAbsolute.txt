@@ -496,7 +496,6 @@ C:\Users\Kelly Carvalho\projetocc\obj\Debug\netcoreapp3.1\Razor\Views\Gestao\Edi
 C:\Users\Kelly Carvalho\projetocc\obj\Debug\netcoreapp3.1\Razor\Views\Gestao\EditarCliente.cshtml.g.cs
 C:\Users\Kelly Carvalho\projetocc\obj\Debug\netcoreapp3.1\Razor\Views\Gestao\GerarOS.cshtml.g.cs
 C:\Users\Kelly Carvalho\projetocc\obj\Debug\netcoreapp3.1\Razor\Views\Gestao\EditarServico.cshtml.g.cs
-C:\Users\Kelly Carvalho\projetocc\obj\Debug\netcoreapp3.1\Razor\Views\Gestao\Error.cshtml.g.cs
 C:\Users\Kelly Carvalho\ProjetoCC\obj\Debug\netcoreapp3.1\SystemCC.csproj.CoreCompileInputs.cache
 C:\Users\Kelly Carvalho\ProjetoCC\obj\Debug\netcoreapp3.1\SystemCC.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Kelly Carvalho\ProjetoCC\obj\Debug\netcoreapp3.1\SystemCC.MvcApplicationPartsAssemblyInfo.cache
@@ -523,8 +522,4 @@ C:\Users\Kelly Carvalho\projetocc\bin\Debug\netcoreapp3.1\runtimes\win-arm\nativ
 C:\Users\Kelly Carvalho\projetocc\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\Kelly Carvalho\projetocc\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\Kelly Carvalho\projetocc\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
-C:\Users\Kelly Carvalho\projetocc\obj\Debug\netcoreapp3.1\Razor\Views\Errors\Create.cshtml.g.cs
-C:\Users\Kelly Carvalho\projetocc\obj\Debug\netcoreapp3.1\Razor\Views\Errors\Delete.cshtml.g.cs
-C:\Users\Kelly Carvalho\projetocc\obj\Debug\netcoreapp3.1\Razor\Views\Errors\Details.cshtml.g.cs
-C:\Users\Kelly Carvalho\projetocc\obj\Debug\netcoreapp3.1\Razor\Views\Errors\Edit.cshtml.g.cs
-C:\Users\Kelly Carvalho\projetocc\obj\Debug\netcoreapp3.1\Razor\Views\Errors\Index.cshtml.g.cs
+C:\Users\Kelly Carvalho\projetocc\obj\Debug\netcoreapp3.1\Razor\Views\Shared\ErrorMensage.cshtml.g.cs

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -61,31 +62,45 @@ namespace SystemCC.Controllers
 
 
         }
+
+        public IActionResult ErrorMensage()
+        {
+            return View();
+        }
         public IActionResult Deletar(int id)
         {
-            if (id > 0)
+
+            try
             {
                 var verificarservico = database.os.Where(os => os.idServico == id);
+                var removerservico = database.servicos.SingleOrDefault(ser => ser.ID == id);
 
-                if (verificarservico!=null)
+                
+                if (id > 0)
                 {
-                    return View("Error","Gestao");
+                 
 
-                }
-                else{
 
-                    var removerservico = database.servicos.SingleOrDefault(ser => ser.ID == id);
-                    database.servicos.Remove(removerservico);
-                    database.SaveChanges();
+                  
+                        database.servicos.Remove(removerservico);
+                        database.SaveChanges();
+                        return RedirectToAction("Servico", "Gestao");
 
-                }
-            
+
+
+
+                    }
+
+
 
             }
+            catch (Exception e)
+            {
+                return RedirectToAction("ErrorMensage", "Gestao");
 
+            }
             return RedirectToAction("Servico", "Gestao");
 
-
         }
-    }
+                }
 }

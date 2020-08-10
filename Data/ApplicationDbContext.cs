@@ -4,7 +4,7 @@ using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using projetos.Models;
-using SystemCC.Models;
+
 
 namespace projetos.Data
 {
@@ -19,6 +19,6 @@ namespace projetos.Data
         {
         }
 
-        public DbSet<SystemCC.Models.Error> Error { get; set; }
+        public DbSet<projetos.Models.ErrorMessage> Error { get; set; }
     }
 }

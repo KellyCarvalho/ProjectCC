@@ -115,7 +115,7 @@ namespace projetos.Controllers{
 
         }
 
-      public IActionResult Error()
+      public IActionResult ErrorMensage()
         {
 
             return View();
