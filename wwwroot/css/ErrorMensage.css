@@ -1,0 +1,31 @@
+﻿body {
+    text-align:center;
+}
+
+a, btn{
+    padding-left:20px;
+    text-decoration-color:red;
+
+}
+#alert{
+
+    color:black;
+    font-size:30px;
+    text-align:center;
+    font-display:block;
+    font-family:Arial;
+
+}
+
+#cliente,#os{
+
+    padding:50px;
+    box-sizing: padding-box;
+    border-color:rebeccapurple;
+    border:solid;
+    background-color:black;
+    color:aliceblue;
+    border-radius:50px;
+
+
+}
