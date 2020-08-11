@@ -96,6 +96,9 @@ namespace SystemCC.Controllers
             }
             catch (Exception e)
             {
+                ErrorMessage error = new ErrorMessage();
+                error.ID = 1;
+                error.Mensagem = "Servico";
                 return RedirectToAction("ErrorMensage", "Gestao");
 
             }

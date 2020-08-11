@@ -70,20 +70,18 @@ namespace SystemCC.Controllers
         public IActionResult Atualizar(Cliente cliente)
         {
 
-            cliente.ID = cliente.ID;
-            cliente.Nome = cliente.Nome;
-            cliente.CPF = cliente.CPF;
-            cliente.Telefone = cliente.Telefone;
-            cliente.Bairro = cliente.Bairro;
-            cliente.Cidade = cliente.Cidade;
-            cliente.Observacoes = cliente.Observacoes;
+            var cli = database.clientes.First(c => c.ID == cliente.ID);
 
-
-       
-
+            cli.Nome = cliente.Nome;
+            cli.Telefone = cliente.Telefone;
+            cli.Bairro = cliente.Bairro;
+            cli.Cidade = cliente.Cidade;
+            cli.CPF = cliente.CPF;
+            cli.Observacoes = cliente.Observacoes;
+           
 
             database.SaveChanges();
-            return RedirectToAction("OS", "Gestao");
+            return RedirectToAction("Cliente", "Gestao");
 
 
         }
