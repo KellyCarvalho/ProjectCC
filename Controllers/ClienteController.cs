@@ -34,35 +34,52 @@ namespace SystemCC.Controllers
              
         }
 
-        public IActionResult Index(Cliente cliente)
-        {
-
-            return View();
-
-
-        }
+      /*
 
         [HttpPost]
         public IActionResult Clientes(int id){
         
 
         return Json(id);
-        }
+        }*/
 
         public IActionResult Deletar(int id)
         {
-          if(id > 0){
 
-   var removercliente =database.clientes.SingleOrDefault(os=>os.ID==id);
-                   database.clientes.Remove(removercliente);
-                   database.SaveChanges();
-               
+            try
+            {
+                var verificarservico = database.os.Where(os => os.idcliente == id);
+                var removercliente = database.clientes.SingleOrDefault(c => c.ID == id);
+
+
+                if (id > 0)
+                {
+
+
+
+
+                    database.clientes.Remove(removercliente);
+                    database.SaveChanges();
+                    return RedirectToAction("Cliente", "Gestao");
+
+
+
+
+                }
+
+
+
             }
-              
+            catch (Exception e)
+            {
+                ErrorMessage error = new ErrorMessage();
+                error.ID = 2;
+                error.Mensagem = "Cliente";
+                return RedirectToAction("ErrorMensage", "Gestao");
+
+            }
             return RedirectToAction("Cliente", "Gestao");
 
-
-       
         }
 
 

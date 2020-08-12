@@ -27,57 +27,56 @@
 
 
 
-<table id="clientes" class="table table-striped table-bordered">
+<table id="clientes" class="table table-striped table-bordered" style="width:100%"">
 
     <thead>
         <tr>
             <th>Id</th>
-         
             <th>Nome</th>
             <th>Telefone</th>
             <th>Cidade</th>
-           
+            <th>Observacoes</th>
+            <!--
+    <th>Bairro</th>
+    <th>CPF</th>
+    <th>Ações</th>-->
+
         </tr>
     </thead>
     <tbody>
         @foreach (var cliente in Model)
         {
-            <tr>
-                <td>@cliente.ID</td>
-
-            
-                <td>@cliente.Nome</td>
-                <td>@cliente.Telefone</td>
-                <td>@cliente.Cidade</td>
-              
-
-                <td>
-                    <a class="btn btn-primary" href="/Gestao/EditarCliente/@cliente.ID">Editar</a>
-
-
-
-                    <form style="display: inline;" asp-controller="Cliente" asp-action="Deletar">
-                        <input type="hidden" name="id" id="id" value="@cliente.ID">
-                        <button class="btn btn-danger">Deletar</button>
-                    </form>
-
-                    <form style="display: inline;" asp-controller="Gestao" asp-action="GerarOS">
-                        <input type="hidden" name="id" id="id" value="@cliente.ID">
-                        <button class="btn btn-success">Gerar OS</button>
-
-
-                    </form>
-
-                   
+        <tr>
+            <td>@cliente.ID</td>
+            <td>@cliente.Nome</td>
+            <td>@cliente.Telefone</td>
+            <td>@cliente.Cidade</td>
+            <!--
+    <td>@cliente.Observacoes</td>
+    <td>@cliente.Bairro</td>
+    <td>@cliente.CPF</td>-->
 
 
 
 
+            <td>
+                <a class="btn btn-primary" href="/Gestao/EditarCliente/@cliente.ID">Editar</a>
 
 
 
-                </td>
-            </tr>
+                <form style="display: inline;" asp-controller="Cliente" asp-action="Deletar">
+                    <input type="hidden" name="id" id="id" value="@cliente.ID">
+                    <button class="btn btn-danger">Deletar</button>
+                </form>
+
+                <form style="display: inline;" asp-controller="Gestao" asp-action="GerarOS">
+                    <input type="hidden" name="id" id="id" value="@cliente.ID">
+                    <button class="btn btn-success">Gerar OS</button>
+
+                </form>
+
+            </td>
+        </tr>
         }
     </tbody>
 </table>

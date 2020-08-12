@@ -523,3 +523,4 @@ C:\Users\Kelly Carvalho\projetocc\bin\Debug\netcoreapp3.1\runtimes\win-arm64\nat
 C:\Users\Kelly Carvalho\projetocc\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\Kelly Carvalho\projetocc\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\Kelly Carvalho\projetocc\obj\Debug\netcoreapp3.1\Razor\Views\Shared\ErrorMensage.cshtml.g.cs
+C:\Users\Kelly Carvalho\projetocc\obj\Debug\netcoreapp3.1\Razor\Views\Shared\ErrorDelete.cshtml.g.cs
